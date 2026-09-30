@@ -1,37 +1,66 @@
-package project;
-
-public class point {
-	private int abs ; 
+class point {
+	private int abs;
 	private int ord ;
-	char nom;
-	point (int a, int b ,char c){
-		abs = a;
-		ord = b ;
-		nom = c;
+	private String nom;
+	
+	point (String c,int x , int y){
+		abs=x;
+		ord=y;
+		nom=c;
+	}
+	point (String c){
+		nom=c;
+	}
+	point (int x , int y ){
+		abs=x;
+		ord=y;
 		
 	}
-	point(int x, char k){
+	point(String ch){
+		nom=ch;
+		ord=0;
+		abs=0;
+	}
+	point (int x , char c){
 		abs=x;
 		ord=2*x;
-		nom = k;
+		nom=c;
 	}
-	void transhor(int d) {
+	void TranslHoriz(int d) {
 		abs+=d;
-		
 	}
-	void transver(int c) {
-		ord+=c;
+	void TranslVert(int d) {
+		ord+=d;
 	}
-	void trans(int d , int c) {
+	void Translation(int d , int d1) {
 		abs+=d;
-		ord+=c;
+		ord+=d1;
 	}
-	void affiche() {
-		System.out.println(nom+"("+abs+","+ord+")") ; 
-		
+	void Affiche() {
+		System.out.println(nom+"(" + abs + ", " + ord + ")");
+	}
+	public boolean Coincide(point p) {
+		return(abs==p.abs && ord==p.ord);
+	}
+	public String getNom() {
+		return nom ;
+	}
+	public int getAbscisse() {
+		return abs;
 	}
 	
+	public int getOrdonnée() {
+		return ord ;
+	}
+	public void setNom(String ch) {
+		nom=ch;
+	}
+	public void setAbscisse(int a) {
+		abs=a;
+		
+	}
+	public void setOrdonnée(int a) {
+		ord=a;
+		
+	}
 }
-
-
-
